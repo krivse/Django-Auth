@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}
+    Profile Page
+{% endblock %}
+{% block main %}
+    <h1>User Profile</h1>
+    <p>User ID: {{ user.id }}</p>
+    <p>Email: {{ user.email }}</p>
+    <p>Username: {{ user.username }}</p>
+    <p>Is Active: {{ user.is_active }}</p>
+    <p>Date Joined: {{ user.date_joined }}</p> <br>
+    <a href="{% url 'edit_profile' %}">Edit Profile</a> <br>
+    <a href="{% url 'index' %}">Go Back</a>
+{% endblock %}

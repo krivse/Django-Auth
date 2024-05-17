@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}
+List Page
+{% endblock %}
+{% block main %}
+    <h3>List of Users</h3>
+    {% for user in users %}
+        <ul>
+            <li>{{ user.username }}</li>
+            <li>{{ user.email }}</li>
+            <li>{{ user.is_active }}</li>
+            <li>{{ user.is_superuser }}</li>
+            <li>{{ user.date_joined }}</li>
+        </ul>
+    {% endfor %}
+    <a href="{% url 'index' %}">Go Back</a>
+{% endblock %}

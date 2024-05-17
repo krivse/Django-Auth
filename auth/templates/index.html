@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}
+    Home Page
+{% endblock %}
+{% block main %}
+    {% if user.is_authenticated %}
+        <h3>Hello {{user.username}}. Select one of the links below:</h3>
+        <a href="{% url 'profile' %}">Profile</a> <br>
+        <a href="{% url 'edit_profile' %}">Edit Profile</a> <br>
+        <a href="{% url 'list_users' %}">List Users</a> <br>
+        <a href="{% url 'logout' %}">Logout</a>
+    {% else %}
+        <h3>Hello Guest. Select one of the links below:</h3>
+        <a href="{% url 'login' %}">Login</a> <br>
+        <a href="{% url 'register' %}">Register</a> <br>
+        {% for message in messages %}
+            <p style="color: green;">{{ message }}</p>
+        {% endfor %}
+    {% endif %}
+{% endblock %}
