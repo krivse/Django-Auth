@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}
+    Login Page
+{% endblock %}
+{% block main %}
+    <h3>Login</h3>
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+    {% for message in messages %}
+        <p style="color: green;">{{ message }}</p>
+    {% endfor %}
+    <form method="post">
+        {% csrf_token %}
+        <label for="email">email:</label>
+        <input type="text" id="email" name="email">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password">
+        <input type="submit" value="Login">
+    </form> <br>
+    <a href="{% url 'password_reset' %}">Forgot Password</a> <br>
+    <a href="{% url 'index' %}">Go Back</a>
+{% endblock %}
