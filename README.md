@@ -11,11 +11,11 @@
 - [x] Changing the password
 - [x] Change the email address
 
-**_Запуск приложения:_**
+**_Launch the application:_**
 ```
 sudo docker compose up -d
 ```
-**_Выполнить миграции:_**
+**_Run migrations:_**
 ```
 sudo docker compose exec web python manage.py migrate
 ```
